@@ -43,9 +43,15 @@ node default {
   # Example:
   #   class { 'my_class': }
   exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
-  creates => '/etc/motd',
-  path => '/usr/local/bin'
+    creates => '/etc/motd',
+    path => '/usr/local/bin'
 }
+
+  host { 'hosinfefer2002.puppetlabs.vm':
+    ensure       => present,
+    ip           => '127.0.0.1',
+    host_aliases => 'hosinfefer2002',
+  }
  # notify { "Greetings, this server's name is ${::hostname}": }
 #  include examples::fundamentals
 }

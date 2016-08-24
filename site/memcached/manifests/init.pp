@@ -2,6 +2,7 @@ class memcached {
 
 package { 'memcached':
   ensure => present,
+  before => File['/etc/sysconfig/memcached'],
 }
 
 file { '/etc/sysconfig/memcached':
@@ -10,7 +11,6 @@ file { '/etc/sysconfig/memcached':
   group   => 'root',
   mode    => '0644',
   source  => 'puppet:///modules/memcached/memcache',
-  require => Package['memcached'],
 }
 
 service { 'memcached':

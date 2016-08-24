@@ -42,6 +42,13 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
+  file { '/etc/motd':
+    ensure => file,
+    owner => root,
+    group => root,
+    mode => 0640,
+    content => "Hello test Puppet, I've learned about managing resources.\n",
+  }
   notify { "Greetings, this server's name is ${::hostname}": }
   include examples::fundamentals
 }

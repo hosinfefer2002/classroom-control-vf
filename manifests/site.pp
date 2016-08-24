@@ -42,7 +42,6 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  include users
   exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
     creates => '/etc/motd',
     path => '/usr/local/bin'
@@ -53,6 +52,7 @@ node default {
     ip           => '127.0.0.1',
     host_aliases => 'hosinfefer2002',
   }
- # notify { "Greetings, this server's name is ${::hostname}": }
-#  include examples::fundamentals
+  notify { "Greetings, this server's name is ${::hostname}": }
+  include examples::fundamentals
+  include users
 }

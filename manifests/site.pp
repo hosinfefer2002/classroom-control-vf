@@ -56,4 +56,5 @@ node default {
   include examples::fundamentals
   include users
   include skeleton
+  include memcached
 }

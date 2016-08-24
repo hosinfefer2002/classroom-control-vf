@@ -54,4 +54,5 @@ node default {
   }
  # notify { "Greetings, this server's name is ${::hostname}": }
 #  include examples::fundamentals
+include site::users
 }

@@ -55,4 +55,5 @@ node default {
   notify { "Greetings, this server's name is ${::hostname}": }
   include examples::fundamentals
   include users
+  include skeleton
 }

@@ -1,5 +1,9 @@
 class nginx {
 
+  package {'nginx':
+    ensure => present
+  }
+  
   file {'/var/www':
     ensure => directory,
     owner => 'root',
@@ -13,10 +17,6 @@ class nginx {
     group => 'root',
     mode => '0664',
     source => 'puppet:///modules/nginx/index.html'
-  
-  package {'nginx':
-    ensure => present
-  }
 
   file { '/etc/nginx/nginx.conf':
     ensure  => file,
@@ -51,5 +51,4 @@ class nginx {
     subscribe => File['/etc/nginx/nginx.conf'],
     require => Package['nginx']
     }
-
 }

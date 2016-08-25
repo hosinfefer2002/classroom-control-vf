@@ -1,9 +1,9 @@
-user { 'admin':
+user { 'administrator':
   ensure => present,
 }
 
 class { 'aliases':
-  admin   => 'admin',
-  require => User['admin'],
+  admin   => 'administrator',
+  require => User['administrator'],
 }
 

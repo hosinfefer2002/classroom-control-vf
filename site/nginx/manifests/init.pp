@@ -13,9 +13,8 @@ class nginx {
     group => 'root',
     mode => '0664',
     source => 'puppet:///modules/nginx/index.html'
-
   
-  package { 'nginx':
+  package {'nginx':
     ensure => present
   }
 

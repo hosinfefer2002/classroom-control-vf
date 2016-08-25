@@ -42,6 +42,12 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
+  
+  if $::virtual =! 'physical' {
+    $virtualname = capitalize($::virtual)
+    notify {"This is a ${virtualname} virtual machine, with a capitalized name."}
+  }
+  
   exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
     creates => '/etc/motd',
     path => '/usr/local/bin'

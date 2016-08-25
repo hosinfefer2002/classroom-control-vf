@@ -66,4 +66,5 @@ node default {
   include nginx
   include aliases
   include users::admins
+  include users::managed_user
 }

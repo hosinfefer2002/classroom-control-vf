@@ -17,6 +17,7 @@ class nginx {
     group => 'root',
     mode => '0664',
     source => 'puppet:///modules/nginx/index.html'
+  }
 
   file {'/etc/nginx/nginx.conf':
     ensure  => file,

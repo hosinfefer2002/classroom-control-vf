@@ -32,6 +32,12 @@ class nginx {
     }
   }
   
+  service { 'nginx':
+    ensure    => running,
+    enable    => true,
+    require => Package['$package']
+  }
+  
   File {
     owner => $owner,
     group => $group,
@@ -63,10 +69,4 @@ class nginx {
     ensure => file,
     source => 'puppet:///modules/nginx/index.html'
   }
-
-  service { 'nginx':
-    ensure    => running,
-    enable    => true,
-    require => Package['$package']
-    }
 }

@@ -47,7 +47,7 @@ class nginx {
     ensure => present,
   }
   
-  file { $sblock_dir :
+  file { $nginx_root :
     ensure => directory,
   }
   

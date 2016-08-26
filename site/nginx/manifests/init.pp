@@ -47,13 +47,13 @@ class nginx {
     require => Package['$package']
   }
   
-  file { "${conf_dir}/nginx.conf :
+  file { "${conf_dir}/nginx.conf" :
     ensure => file,
     content => template('nginx/nginx.conf.erb')
     notify => Service['nginx']
   }
   
-  file { "${sblock_dir}/default.conf :
+  file { "${sblock_dir}/default.conf" :
     ensure => file,
     content => template ('nginx/default.conf.erb'),
     notify => Service['nginx']

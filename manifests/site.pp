@@ -43,6 +43,9 @@ node default {
   # Example:
   #   class { 'my_class': }
   
+  $message = "This is a hiera test"
+  notify { $message: }
+  
   if $::virtual != 'physical' {
     $virtualname = capitalize($::virtual)
     notify {"This is a ${virtualname} virtual machine, with a capitalized name.":}

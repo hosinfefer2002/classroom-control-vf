@@ -49,4 +49,5 @@ node default {
   include memcached
   include nginx
   include aliases
+  include wrappers
 }

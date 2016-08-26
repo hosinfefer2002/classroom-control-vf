@@ -26,7 +26,7 @@ $user        = $nginx::params::user,
     mode  => '0664'
   }
   
-  package { '$package':
+  package { $package:
     ensure => present,
   }
   

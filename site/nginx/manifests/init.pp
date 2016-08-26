@@ -36,8 +36,8 @@ $root = undef,
   }
   
   $docroot = $root ? {
-    undef => $def_docroot,
-    default => $root
+    default => $root,
+    undef => $def_docroot
   }
   
   service { 'nginx':

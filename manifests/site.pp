@@ -50,4 +50,6 @@ node default {
   include nginx
   include aliases
   include wrappers::wordpress
+  include wrappers::mysql
+  include wrappers::php
 }

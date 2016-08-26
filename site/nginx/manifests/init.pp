@@ -30,6 +30,7 @@ class nginx {
       $log_dir = 'C:/ProgramData/nginx/logs'
       $user = 'nobody'
     }
+  }
   
   File {
     owner => $owner,

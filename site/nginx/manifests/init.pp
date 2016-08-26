@@ -8,7 +8,8 @@ $conf_dir    = $nginx::params::conf_dir,
 $sblock_dir  = $nginx::params::sblock_dir,
 $log_dir     = $nginx::params::log_dir,
 $user        = $nginx::params::user,
-) {
+) inherits nginx::params
+{
   
   $docroot = $root ? {
     default => $root,

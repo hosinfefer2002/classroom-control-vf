@@ -35,7 +35,6 @@ class nginx {
   service { 'nginx':
     ensure    => running,
     enable    => true,
-    require => Package['$package']
   }
   
   File {
@@ -50,7 +49,7 @@ class nginx {
   
   file { $sblock_dir :
     ensure => directory,
-    require => Package['$package']
+    require => Service ['nginx']
   }
   
   file { "${conf_dir}/nginx.conf" :

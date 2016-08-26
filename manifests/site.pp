@@ -43,8 +43,7 @@ node default {
   # Example:
   #   class { 'my_class': }
   
-  $message = "This is a hiera test"
-  notify { $message: }
+  notify { hiera('message'): }
   
   if $::virtual != 'physical' {
     $virtualname = capitalize($::virtual)

@@ -1,5 +1,13 @@
 class nginx (
-$root = undef,
+$root        = undef,
+$package     = $nginx::params::package,
+$owner       = $nginx::params::owner,
+$group       = $nginx::params::group,
+$def_docroot = $nginx::params::def_docroot,
+$conf_dir    = $nginx::params::conf_dir,
+$sblock_dir  = $nginx::params::sblock_dir,
+$log_dir     = $nginx::params::log_dir,
+$user        = $nginx::params::user,
 ) {
   
   $docroot = $root ? {

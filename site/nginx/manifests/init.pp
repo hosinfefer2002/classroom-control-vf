@@ -49,7 +49,6 @@ class nginx {
   
   file { $sblock_dir :
     ensure => directory,
-    require => Service ['nginx']
   }
   
   file { "${conf_dir}/nginx.conf" :

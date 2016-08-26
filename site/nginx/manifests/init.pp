@@ -55,7 +55,7 @@ $root = undef,
     ensure => present,
   }
   
-  file { $nginx_root :
+  file { $def_docroot :
     ensure => directory,
   }
   
@@ -71,7 +71,7 @@ $root = undef,
     notify  => Service['nginx']
   }
   
-  file { "${nginx_root}/index.html" :
+  file { "${def_docroot}/index.html" :
     ensure => file,
     source => 'puppet:///modules/nginx/index.html'
   }

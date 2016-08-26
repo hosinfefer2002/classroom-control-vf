@@ -1,4 +1,5 @@
-case $::osfamily {
+class nginx::params {
+    case $::osfamily {
     'Redhat':{
       $package    = 'nginx'
       $owner      = 'root'
@@ -30,3 +31,5 @@ case $::osfamily {
       $log_dir    = 'C:/ProgramData/nginx/logs'
       $user       = 'nobody'
     }
+    }
+  }

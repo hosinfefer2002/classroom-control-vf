@@ -2,7 +2,7 @@
 #   * Official English Documentation: http://nginx.org/en/docs/
 #   * Official Russian Documentation: http://nginx.org/ru/docs/
 
-user              nginx;
+user              <%= @user %>;
 worker_processes  1;
 
 error_log  <%= @log_dir %>/error.log;
@@ -37,6 +37,6 @@ http {
 
     # Load config files from the /etc/nginx/conf.d directory
     # The default server is in conf.d/default.conf
-    include <%= @conf_dir %>/conf.d/*.conf;
+    include <%= @sblock_dir %>/*.conf;
 
 }

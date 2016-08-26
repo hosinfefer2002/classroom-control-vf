@@ -1,2 +1,2 @@
 ---
-nginx::def_docroot:/var/www/training
+nginx::def_docroot:'/var/www/training'

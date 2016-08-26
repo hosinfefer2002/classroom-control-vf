@@ -49,7 +49,7 @@ class nginx {
   
   file { "${conf_dir}/nginx.conf" :
     ensure => file,
-    content => template('nginx/nginx.conf.erb')
+    content => template('nginx/nginx.conf.erb'),
     notify => Service['nginx']
   }
   

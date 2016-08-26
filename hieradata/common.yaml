@@ -1,3 +1,2 @@
 ---
 message: This message came from the common hiera datasource.
-nginx::def_docroot: '/var/www/html' 

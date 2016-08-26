@@ -6,7 +6,8 @@ $root = undef,
       $package    = 'nginx'
       $owner      = 'root'
       $group      = 'root'
-      $nginx_root = '/var/www'
+      #$nginx_root = '/var/www'
+      $def_docroot = '/var/www'
       $conf_dir   = '/etc/nginx'
       $sblock_dir = '/etc/nginx/conf.d'
       $log_dir    = '/var/log/nginx'
@@ -32,6 +33,11 @@ $root = undef,
       $log_dir    = 'C:/ProgramData/nginx/logs'
       $user       = 'nobody'
     }
+  }
+  
+  $docroot = $root ? {
+    undef => $def_docroot,
+    default => $root
   }
   
   service { 'nginx':
